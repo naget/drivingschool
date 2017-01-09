@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - drivingschool@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="drivingschool">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="blogdb"/>
+    <schema id="3" name="boke"/>
+    <schema id="4" name="db_blue1"/>
+    <schema id="5" name="estoresystem"/>
+    <schema id="6" name="information_schema"/>
+    <schema id="7" name="job"/>
+    <schema id="8" name="mysql"/>
+    <schema id="9" name="performance_schema"/>
+    <schema id="10" name="practice"/>
+    <schema id="11" name="schoolbus"/>
+    <schema id="12" name="springdemo"/>
+    <schema id="13" name="sys"/>
+    <schema id="14" name="text"/>
+    <schema id="15" name="user"/>
+    <schema id="16" name="yilin"/>
+    <schema id="17" name="yiling"/>
+    <table id="18" parent="1" name="user"/>
+    <table id="19" parent="1" name="student_info"/>
+    <table id="20" parent="1" name="health_info"/>
+    <table id="21" parent="1" name="course_info"/>
+    <table id="22" parent="1" name="grade_info"/>
+    <table id="23" parent="1" name="license_info"/>
+    <view id="24" parent="1" name="grade_view">
+      <comment>VIEW</comment>
+    </view>
+    <column id="25" parent="18" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="26" parent="18" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="27" parent="18" name="role">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="28" parent="18" name="PRIMARY">
+      <columns>name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="29" parent="19" name="sno">
+      <comment>学号</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="30" parent="19" name="sname">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="31" parent="19" name="sex">
+      <comment>1 男
+2 女</comment>
+      <mandatory>1</mandatory>
+      <data-type>enum(&apos;男&apos;, &apos;女&apos;)|0</data-type>
+    </column>
+    <column id="32" parent="19" name="age">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="33" parent="19" name="identify">
+      <mandatory>1</mandatory>
+      <data-type>varchar(18)|0</data-type>
+    </column>
+    <column id="34" parent="19" name="tel">
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <column id="35" parent="19" name="car_type">
+      <mandatory>1</mandatory>
+      <data-type>varchar(4)|0</data-type>
+    </column>
+    <column id="36" parent="19" name="enroll_time">
+      <comment>入学时间</comment>
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="37" parent="19" name="leave_time">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="38" parent="19" name="scondition">
+      <comment>1 学习
+2 结业
+3 退学</comment>
+      <mandatory>1</mandatory>
+      <data-type>enum(&apos;学习&apos;, &apos;结业&apos;, &apos;退学&apos;)|0</data-type>
+    </column>
+    <column id="39" parent="19" name="s_text">
+      <data-type>text|0</data-type>
+    </column>
+    <index id="40" parent="19" name="student_info_car_type_index">
+      <columns>car_type</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="41" parent="19" name="student_info_scondition_index">
+      <columns>scondition</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="42" parent="19" name="student_info_sname_index">
+      <columns>sname</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="43" parent="19" name="PRIMARY">
+      <columns>sno</columns>
+      <primary>1</primary>
+    </key>
+    <trigger id="44" parent="19" name="update_sname">
+      <trig-events>U</trig-events>
+      <trig-turn>AFTER_ROW</trig-turn>
+    </trigger>
+    <trigger id="45" parent="19" name="delete_stu">
+      <trig-events>D</trig-events>
+      <trig-turn>AFTER_ROW</trig-turn>
+    </trigger>
+    <column id="46" parent="20" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="47" parent="20" name="sno">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="48" parent="20" name="sname">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="49" parent="20" name="height">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="50" parent="20" name="weight">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="51" parent="20" name="differentiate">
+      <data-type>enum(&apos;正常&apos;, &apos;色弱&apos;, &apos;色盲&apos;)|0</data-type>
+    </column>
+    <column id="52" parent="20" name="left_sight">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="53" parent="20" name="right_sight">
+      <data-type>float|0</data-type>
+    </column>
+    <column id="54" parent="20" name="left_ear">
+      <data-type>enum(&apos;正常&apos;, &apos;偏弱&apos;)|0</data-type>
+    </column>
+    <column id="55" parent="20" name="right_ear">
+      <data-type>enum(&apos;正常&apos;, &apos;偏弱&apos;)|0</data-type>
+    </column>
+    <column id="56" parent="20" name="legs">
+      <data-type>enum(&apos;正常&apos;, &apos;不相等&apos;)|0</data-type>
+    </column>
+    <column id="57" parent="20" name="pressure">
+      <data-type>enum(&apos;正常&apos;, &apos;偏高&apos;)|0</data-type>
+    </column>
+    <column id="58" parent="20" name="history">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="59" parent="20" name="h_text">
+      <data-type>text|0</data-type>
+    </column>
+    <index id="60" parent="20" name="health_fk">
+      <columns>sno</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="61" parent="20" name="health_info_sname_index">
+      <columns>sname</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="62" parent="20" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="63" parent="20" name="health_fk">
+      <columns>sno</columns>
+      <ref-key>~.student_info.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="64" parent="21" name="cno">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="65" parent="21" name="before_cour">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="66" parent="21" name="cname">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <key id="67" parent="21" name="PRIMARY">
+      <columns>cno</columns>
+      <primary>1</primary>
+    </key>
+    <column id="68" parent="22" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="69" parent="22" name="sno">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="70" parent="22" name="cno">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="71" parent="22" name="last_time">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="72" parent="22" name="times">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="73" parent="22" name="grade">
+      <data-type>float|0</data-type>
+    </column>
+    <index id="74" parent="22" name="grade _info_course_info_cno_fk">
+      <columns>cno</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="75" parent="22" name="grade _info_id_uindex">
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="76" parent="22" name="grade _info_student_info_sno_fk">
+      <columns>sno</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="77" parent="22" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="78" parent="22" name="grade _info_id_uindex">
+      <columns>id</columns>
+      <underlying-index>grade\u0020_info_id_uindex</underlying-index>
+    </key>
+    <foreign-key id="79" parent="22" name="grade _info_student_info_sno_fk">
+      <columns>sno</columns>
+      <ref-key>~.student_info.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="80" parent="22" name="grade _info_course_info_cno_fk">
+      <columns>cno</columns>
+      <ref-key>~.course_info.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="81" parent="23" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="82" parent="23" name="sno">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="83" parent="23" name="sname">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="84" parent="23" name="lno">
+      <comment>驾驶证号</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(18)|0</data-type>
+    </column>
+    <column id="85" parent="23" name="receive_time">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="86" parent="23" name="receive_name">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="87" parent="23" name="l_text">
+      <data-type>text|0</data-type>
+    </column>
+    <index id="88" parent="23" name="license_info_receive_name_index">
+      <columns>receive_name</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="89" parent="23" name="license_info_sname_index">
+      <columns>sname</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="90" parent="23" name="license_info_student_info_sno_fk">
+      <columns>sno</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="91" parent="23" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="92" parent="23" name="license_info_student_info_sno_fk">
+      <columns>sno</columns>
+      <ref-key>~.student_info.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <trigger id="93" parent="23" name="license_stu">
+      <trig-events>I</trig-events>
+      <trig-turn>AFTER_ROW</trig-turn>
+    </trigger>
+    <column id="94" parent="24" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="95" parent="24" name="sno">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="96" parent="24" name="sname">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="97" parent="24" name="cname">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="98" parent="24" name="last_time">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="99" parent="24" name="times">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="100" parent="24" name="grade">
+      <data-type>float|0</data-type>
+    </column>
+  </database-model>
+</dataSource>

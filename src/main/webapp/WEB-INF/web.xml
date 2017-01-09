@@ -1,0 +1,64 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>ForwardServlet</servlet-name>
+    <servlet-class>servlet.ForwardServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PersonalGradeServlet</servlet-name>
+    <servlet-class>servlet.PersonalGradeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PersonalInfoServlet</servlet-name>
+    <servlet-class>servlet.PersonalInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>IndexServlet</servlet-name>
+  <servlet-class>servlet.IndexServlet</servlet-class>
+</servlet>
+  <servlet>
+    <servlet-name>StudentsInfoServlet</servlet-name>
+    <servlet-class>servlet.StudentsInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GradeChange</servlet-name>
+    <servlet-class>servlet.gradeInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PersonalChangeServlet</servlet-name>
+    <servlet-class>servlet.PresonalChangeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PersonalChangeServlet</servlet-name>
+    <url-pattern>/personalChange</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GradeChange</servlet-name>
+    <url-pattern>/gradeChange</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PersonalGradeServlet</servlet-name>
+    <url-pattern>/getPersonalGrade</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PersonalInfoServlet</servlet-name>
+    <url-pattern>/getPersonalInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StudentsInfoServlet</servlet-name>
+    <url-pattern>/studentsInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ForwardServlet</servlet-name>
+    <url-pattern>/forward</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>IndexServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>
